@@ -255,13 +255,25 @@ elif viewType == 'Year':
             return "N/A"
         
         if value >= 1e12:
-            return f"{sign}${value / 1e12:,.2f} Trillion"
+            if value > 0:
+                return f"{sign}${value / 1e12:,.2f} Trillion"
+            else:
+                return"No Data"
         elif value >= 1e9:
-            return f"{sign}${value / 1e9:,.2f} Billion"
+            if value > 0:
+                return f"{sign}${value / 1e9:,.2f} Billion"
+            else:
+                return"No Data"
         elif value >= 1e6:
-            return f"{sign}${value / 1e6:,.2f} Million"
+            if value > 0:
+                return f"{sign}${value / 1e6:,.2f} Million"
+            else:
+                return"No Data"
         else:
-            return f"{sign}${value:,.2f}"
+            if value > 0:
+                return f"{sign}${value:,.2f}"
+            else:
+                return"No Data"
 
     # Function to format the table with alternating row colors (dark blue and white text)
     def color_alternating_rows(df):
