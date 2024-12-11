@@ -40,7 +40,7 @@ estimateIndex = dfDeficit[dfDeficit['Fiscal Year'].str.contains('Estimates',case
 dfDeficit = dfDeficit.iloc[:estimateIndex-2]
 dfDeficit = dfDeficit[dfDeficit['Fiscal Year']!='TQ']
 dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
-dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
+dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'].fillna(0) * 1_000_000
 
 
 viewType = st.selectbox('Select President by:', ['President','Year'])
