@@ -104,8 +104,8 @@ if viewType == "President":
     def format_large_number(value):
         sign = '-' if value <0 else ""
         value = abs(value)
-        if value is None:
-            return "N/A"
+        if value is None or math.isnan(value):
+            return "No Data"
         
         if value >= 1e12:
             return f"{sign}${value/1e12:,.2f} Trillion"
@@ -252,7 +252,7 @@ elif viewType == 'Year':
     def format_large_number(value):
         sign = '-' if value < 0 else ""
         value = abs(value)
-        if value is None or math.isnan(value:
+        if value is None or math.isnan(value):
             return "No Data"
         
         if value >= 1e12:
