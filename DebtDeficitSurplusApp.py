@@ -21,7 +21,7 @@ import pandas as pd
 dfInstance = TA.Treasury()
 BaseUrl = r'https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_outstanding'
 dfDebt = dfInstance.getHistoricalDebtAPIData(BaseUrl)
-dfPresidents = pd.read_json(r'C:\Users\Jacque Trahan\Documents\USARealityProjectGetLearnt\AmericanRealityClasses\resources\USAPresidents.json')
+dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json')
 
 # this will dL the info on every click
 # dfDeficit = dfInstance.getTaxPolicyDownload() 
