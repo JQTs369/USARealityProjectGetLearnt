@@ -30,7 +30,7 @@ dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json
 path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
 
 #start on main headers
-dfDeficit = pd.read_excel(path,skiprows=6)
+dfDeficit = pd.read_excel(path,engine='openpyxl',skiprows=6)
 # drop first row is empty
 dfDeficit = dfDeficit.drop(0)
 # resname lost columns
