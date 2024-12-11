@@ -13,6 +13,7 @@ import streamlit as st
 import plotly.graph_objects as go
 from AmericanRealityClasses import TreasuryApi as TA
 import pandas as pd
+import math
 
 # needed for numbers to display without scientific notation
 # pd.options.display.float_format = '{:,.2f}'.format
@@ -251,29 +252,17 @@ elif viewType == 'Year':
     def format_large_number(value):
         sign = '-' if value < 0 else ""
         value = abs(value)
-        if value is None:
-            return "N/A"
+        if value is None or math.isnan(value:
+            return "No Data"
         
         if value >= 1e12:
-            if value > 0:
-                return f"{sign}${value / 1e12:,.2f} Trillion"
-            else:
-                return"No Data"
+            return f"{sign}${value / 1e12:,.2f} Trillion"
         elif value >= 1e9:
-            if value > 0:
-                return f"{sign}${value / 1e9:,.2f} Billion"
-            else:
-                return"No Data"
+            return f"{sign}${value / 1e9:,.2f} Billion"
         elif value >= 1e6:
-            if value > 0:
-                return f"{sign}${value / 1e6:,.2f} Million"
-            else:
-                return"No Data"
+            return f"{sign}${value / 1e6:,.2f} Million"
         else:
-            if value > 0:
-                return f"{sign}${value:,.2f}"
-            else:
-                return"No Data"
+            return f"{sign}${value:,.2f}"
 
     # Function to format the table with alternating row colors (dark blue and white text)
     def color_alternating_rows(df):
