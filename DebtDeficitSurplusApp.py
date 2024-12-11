@@ -27,7 +27,8 @@ dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json
 # dfDeficit = dfInstance.getTaxPolicyDownload() 
 
 # manual dfDeficit comment out when a new download is needed
-path = r'C:\Users\Jacque Trahan\Documents\USARealityProjectGetLearnt\AmericanRealityClasses\resources\TaxPolicyCentrHistoricRevenues.xlsx'
+path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
+
 #start on main headers
 dfDeficit = pd.read_excel(path,skiprows=6)
 # drop first row is empty
