@@ -44,7 +44,7 @@ dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
 dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
 
 
-st.title("## Debt & Surplus/Deficit  \n### by POTUS or Year")
+st.title("Debt & Surplus/Deficit  \n# by President or Year")
 
 # User Selection Opitions
 viewType = st.selectbox('Select President Or Year by:', ['President','Year'])
