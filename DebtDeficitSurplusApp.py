@@ -46,7 +46,7 @@ dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Tota
 
 st.markdown(
     """
-    <h1 style='text-align: center; color: darkblue;'>Debt & Surplus/Deficit</h1>
+    <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
     <h2 style='text-align: center;'>by POTUS or Year</h2>
     """, 
     unsafe_allow_html=True
