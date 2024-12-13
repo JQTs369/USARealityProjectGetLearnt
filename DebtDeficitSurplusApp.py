@@ -44,7 +44,10 @@ dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
 dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
 
 
-viewType = st.selectbox('Select President by:', ['President','Year'])
+st.Title("Debt & Surplus/Defiict by President or Year")
+
+# User Selection Opitions
+viewType = st.selectbox('Select President Or Year by:', ['President','Year'])
 
 if viewType == "President":
 
