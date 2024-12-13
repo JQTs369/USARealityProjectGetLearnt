@@ -53,7 +53,7 @@ st.markdown(
 )
 
 # User Selection Opitions
-viewType = st.selectbox('Select President Or Year by:', ['President','Year'])
+viewType = st.selectbox('President/Year Selection:', ['President','Year'])
 
 if viewType == "President":
 
