@@ -111,9 +111,10 @@ if viewType == "President":
 
     # Function to format large numbers with appropriate labels (Million, Billion, Trillion)
     def format_large_number(value):
-        value = abs(value)
+        
         if value is None or math.isnan(value):
             return "No Data"
+        value = abs(value)
         sign = '-' if value <0 else ""
         if value >= 1e12:
             return f"{sign}${value/1e12:,.2f} Trillion"
