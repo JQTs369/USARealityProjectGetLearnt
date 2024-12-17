@@ -66,7 +66,7 @@ class Treasury:
     
 
     def getTaxPolicyDownload(self,
-                TaxPolicySaveLocation:str=r'C:\Users\Jacque Trahan\Documents\USARealityProjectGetLearnt\AmericanRealityClasses\resources\TaxPolicyCentrHistoricRevenues.xlsx'):
+                TaxPolicySaveLocation:str=r'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'):
         # get directory name sperate from file name
         directory = os.path.dirname(TaxPolicySaveLocation)
         # if directroy does not exits itll be made
