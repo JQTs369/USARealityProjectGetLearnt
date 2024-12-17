@@ -259,10 +259,12 @@ elif viewType == 'Year':
 
     # Function to format large numbers with appropriate labels (Million, Billion, Trillion)
     def format_large_number(value):
-        sign = '-' if value < 0 else ""
-        value = abs(value)
+        
         if value is None or math.isnan(value):
             return "No Data"
+            
+        sign = '-' if value < 0 else ""
+        value = abs(value)
         
         if value >= 1e12:
             return f"{sign}${value / 1e12:,.2f} Trillion"
