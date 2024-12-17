@@ -25,23 +25,23 @@ dfDebt = dfInstance.getHistoricalDebtAPIData(BaseUrl)
 dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json')
 
 # this will dL the info on every click
-# dfDeficit = dfInstance.getTaxPolicyDownload() 
+dfDeficit = dfInstance.getTaxPolicyDownload() 
 
 # manual dfDeficit comment out when a new download is needed
-path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
+# path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
 
-#start on main headers
-dfDeficit = pd.read_excel(path,engine='openpyxl',skiprows=6)
-# drop first row is empty
-dfDeficit = dfDeficit.drop(0)
-# resname lost columns
-dfDeficit.rename(columns={"Unnamed: 0":"Fiscal Year","Total":"Receipts Total","Total.1":"Outlays Total","Total.2":"Surplus or Deficit(-) Total"},inplace=True)
-# get rid of dat at the end of table dealing wiith estimating data
-estimateIndex = dfDeficit[dfDeficit['Fiscal Year'].str.contains('Estimates',case=False,na=False)].index[0]
-dfDeficit = dfDeficit.iloc[:estimateIndex-2]
-dfDeficit = dfDeficit[dfDeficit['Fiscal Year']!='TQ']
-dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
-dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
+# #start on main headers
+# dfDeficit = pd.read_excel(path,engine='openpyxl',skiprows=6)
+# # drop first row is empty
+# dfDeficit = dfDeficit.drop(0)
+# # resname lost columns
+# dfDeficit.rename(columns={"Unnamed: 0":"Fiscal Year","Total":"Receipts Total","Total.1":"Outlays Total","Total.2":"Surplus or Deficit(-) Total"},inplace=True)
+# # get rid of dat at the end of table dealing wiith estimating data
+# estimateIndex = dfDeficit[dfDeficit['Fiscal Year'].str.contains('Estimates',case=False,na=False)].index[0]
+# dfDeficit = dfDeficit.iloc[:estimateIndex-2]
+# dfDeficit = dfDeficit[dfDeficit['Fiscal Year']!='TQ']
+# dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
+# dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
 
 
 st.markdown(
