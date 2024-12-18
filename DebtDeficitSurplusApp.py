@@ -67,7 +67,8 @@ if viewType == "President":
 
     # let use select president
     # president = st.selectbox("Select President", dfPresidents['name'])
-    president = st.sidebar.selectbox("Select President",dfPresidents['name'])
+    st.sidebar.subheader("Select President")
+    president = st.sidebar.selectbox("",dfPresidents['name'])
     
 
     # get president data
@@ -242,7 +243,7 @@ elif viewType == 'Year':
     max_year = int(dfDebt['record_fiscal_year'].max())
     # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
     st.sidebar.subheader("Year Range Selector")
-    selected_years = st.sidebar.slider("Select Year Range",min_year, max_year, (1993, 2001))
+    selected_years = st.sidebar.slider("",min_year, max_year, (1993, 2001))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
