@@ -234,7 +234,9 @@ if viewType == "President":
 
 
     fig.update_layout(
-        # title=f"Debt and Deficit/Surplus during {president}'s term",
+        title=f"Debt and Deficit/Surplus during {president}'s term",
+        title_x= 0.5,
+        title_xanchor='center',
         xaxis_title='Year',
         yaxis=dict(
             title='Debt ($)',
