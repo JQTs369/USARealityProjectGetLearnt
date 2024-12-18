@@ -47,8 +47,8 @@ dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Tota
 
 
 
-st.sidebar.title("Welcome To JQTs369 First App!")
-st.sidebar.write("History of Amaerica's Debt & Surplus/Deficits.")
+st.title("Welcome To JQTs369 First App!")
+st.write("History of Amaerica's Debt & Surplus/Deficits.")
 
 
 # User Selection Opitions
