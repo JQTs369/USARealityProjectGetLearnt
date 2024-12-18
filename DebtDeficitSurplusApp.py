@@ -54,6 +54,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Add some vertical space before the next section
+st.markdown("<br>", unsafe_allow_html=True)
 
 # User Selection Opitions
 # viewType = st.selectbox('President/Year Selection:', ['President','Year'])
