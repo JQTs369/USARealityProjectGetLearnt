@@ -53,14 +53,12 @@ st.markdown(
 )
 
 
-st.sidebar.title("Updated Configurations")
-st.sidebar.write("Wad Up!")
-
+st.sidebar.title("Welcome To JQTs369 First App!")
+st.sidebar.write("History of Amaerica's Debt & Surplus/Deficits.)
 
 
 # User Selection Opitions
 # viewType = st.selectbox('President/Year Selection:', ['President','Year'])
-st.sidebar.subheader("Select a President")
 viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
 
 if viewType == "President":
