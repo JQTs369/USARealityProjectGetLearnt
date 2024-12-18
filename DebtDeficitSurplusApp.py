@@ -48,7 +48,11 @@ dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Tota
 
 
 st.title("Welcome To JQTs369 First App!")
-st.write("History of Amaerica's Debt & Surplus/Deficits.")
+# Center text using st.markdown with HTML
+st.markdown(
+    "<h2 style='text-align: center;'>History of America's Debt & Surplus/Deficits.</h2>", 
+    unsafe_allow_html=True
+)
 
 
 # User Selection Opitions
@@ -244,7 +248,7 @@ elif viewType == 'Year':
     max_year = int(dfDebt['record_fiscal_year'].max())
     # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
     st.sidebar.subheader("Year Range Selector")
-    selected_years = st.sidebar.slider("",min_year, max_year, (1993, 2001))
+    selected_years = st.sidebar.slider("",min_year, max_year, (1993, 2002))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
