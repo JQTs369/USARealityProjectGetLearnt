@@ -44,13 +44,7 @@ dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
 dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
 # manual dfDeficit comment out when a new download is needed -Finsih comment 
 
-st.markdown(
-    """
-    <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
-    <h2 style='text-align: center;'>by President or Year</h2>
-    """, 
-    unsafe_allow_html=True
-)
+
 
 
 st.sidebar.title("Welcome To JQTs369 First App!")
@@ -60,6 +54,14 @@ st.sidebar.write("History of Amaerica's Debt & Surplus/Deficits.")
 # User Selection Opitions
 # viewType = st.selectbox('President/Year Selection:', ['President','Year'])
 viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
+
+st.markdown(
+    f"""
+    <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
+    <h2 style='text-align: center;'>{viewType}</h2>
+    """, 
+    unsafe_allow_html=True
+)
 
 if viewType == "President":
 
