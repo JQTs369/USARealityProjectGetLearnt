@@ -6,7 +6,7 @@
 # Organized by Year:[{values}]
     # values will be "year":[{{"President": president,"OfficeYears:[ints]","debt":debt,"surplus/deficit":revenueMinusExpenses}, etc for each president}]
 
-# Make a web app with docker and use streamlit or PyQT(advanced)
+# Make a web app with docker and use streamlit or PyQT(advanced) 
 
 # #imports
 import streamlit as st
@@ -27,7 +27,7 @@ dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json
 # this will dL the info on every click
 # dfDeficit = dfInstance.getTaxPolicyDownload() 
 
-# manual dfDeficit comment out when a new download is needed
+# manual dfDeficit comment out when a new download is needed -Start #TODO: put a yearly time into this method!
 path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
 
 #start on main headers
@@ -42,23 +42,47 @@ dfDeficit = dfDeficit.iloc[:estimateIndex-2]
 dfDeficit = dfDeficit[dfDeficit['Fiscal Year']!='TQ']
 dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
 dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
+# manual dfDeficit comment out when a new download is needed -Finsih comment 
 
 
+
+
+# Create a custom container with a different background color
 st.markdown(
     """
-    <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
-    <h2 style='text-align: center;'>by POTUS or Year</h2>
+    <div style="background-color:#f2f2f2; padding: 20px; border-radius: 10px; text-align: center;">
+        <h1 style="color: #1f77b4;">Welcome To JQTs369 First App!</h1>
+        <h2 style="color: #ff6347;">History of America's Debt & Surplus/Deficits.</h2>
+    </div>
     """, 
     unsafe_allow_html=True
 )
 
+# Add vertical space after the container
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Add some vertical space before the next section
+st.markdown("<br>", unsafe_allow_html=True)
+
 # User Selection Opitions
-viewType = st.selectbox('President/Year Selection:', ['President','Year'])
+# viewType = st.selectbox('President/Year Selection:', ['President','Year'])
+viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
+
+st.markdown(
+    f"""
+    <h1 style='text-align: center;'>You Selected {viewType}</h1>
+    """, 
+    unsafe_allow_html=True
+)
 
 if viewType == "President":
 
     # let use select president
-    president = st.selectbox("Select President", dfPresidents['name'])
+    # president = st.selectbox("Select President", dfPresidents['name'])
+    st.sidebar.subheader("Select President")
+    defualtPresident = "Bill Clinton"
+    president = st.sidebar.selectbox("",dfPresidents['name'],dfPresidents['name'].tolist().index(defualtPresident))
+    
 
     # get president data
     presidentData = dfPresidents[dfPresidents['name'] == president].iloc[0]
@@ -76,11 +100,17 @@ if viewType == "President":
                         suffixes=('_debt','_deficit'))
     mergerdf['record_fiscal_year'] = mergerdf['record_fiscal_year'].astype(str)
 
-    # # shows rpresident info
-    st.write(f'{president} was in office from {startYear} to {endYear}')
+    # # shows president info
+    st.markdown(
+    f"<h2 style='text-align: center;'>{president} was in office from {startYear} to {endYear}.</h2>", 
+    unsafe_allow_html=True
+)
 
     # show debt vs deficit
-    st.write("Debt and Deficit/Surplus furing thier turn")
+    st.markdown(
+    "<h3 style='text-align: center;'>Debt and Deficit/Surplus during their turn.</h3>", 
+    unsafe_allow_html=True
+)
     # Create a summary string
 
     # Data Setup for easy ploting
@@ -155,8 +185,10 @@ if viewType == "President":
         
         return ''.join(rows)
 
-    # Display the table with alternating row colors
+    # Display the table with alternating row colors - Centered
+    st.markdown("<div style='display: flex; justify-content: center;'>", unsafe_allow_html=True)
     st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Graphs
     # create our figure
@@ -230,7 +262,9 @@ elif viewType == 'Year':
     # Add a range slider for the user to pick a range of years
     min_year = int(dfDebt['record_fiscal_year'].min())
     max_year = int(dfDebt['record_fiscal_year'].max())
-    selected_years = st.slider("Select Year Range", min_year, max_year, (min_year, max_year))
+    # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
+    st.sidebar.subheader("Year Range Selector")
+    selected_years = st.sidebar.slider("",min_year, max_year, (1993, 2002))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
@@ -317,7 +351,11 @@ elif viewType == 'Year':
         ]
     }
     summaryDf = pd.DataFrame(summaryData)
+    # st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+        # Display the table with alternating row colors - Centered
+    st.markdown("<div style='display: flex; justify-content: center;'>", unsafe_allow_html=True)
     st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Graphs
     fig = go.Figure()
