@@ -60,6 +60,7 @@ st.sidebar.write("Wad Up!")
 
 # User Selection Opitions
 # viewType = st.selectbox('President/Year Selection:', ['President','Year'])
+st.sidebar.subheader("Select a President")
 viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
 
 if viewType == "President":
@@ -240,7 +241,8 @@ elif viewType == 'Year':
     min_year = int(dfDebt['record_fiscal_year'].min())
     max_year = int(dfDebt['record_fiscal_year'].max())
     # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
-    selected_years = st.sidebar.subheader("Select Year Range",min_year, max_year, (1993, 2001))
+    st.sidebar.subheader("Year Range Selector")
+    selected_years = st.sidebar.selectbox("Select Year Range",min_year, max_year, (1993, 2001))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
