@@ -6,7 +6,7 @@
 # Organized by Year:[{values}]
     # values will be "year":[{{"President": president,"OfficeYears:[ints]","debt":debt,"surplus/deficit":revenueMinusExpenses}, etc for each president}]
 
-# Make a web app with docker and use streamlit or PyQT(advanced)
+# Make a web app with docker and use streamlit or PyQT(advanced) 
 
 # #imports
 import streamlit as st
@@ -27,7 +27,7 @@ dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json
 # this will dL the info on every click
 # dfDeficit = dfInstance.getTaxPolicyDownload() 
 
-# manual dfDeficit comment out when a new download is needed
+# manual dfDeficit comment out when a new download is needed -Start #TODO: put a yearly time into this method!
 path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
 
 #start on main headers
@@ -42,7 +42,7 @@ dfDeficit = dfDeficit.iloc[:estimateIndex-2]
 dfDeficit = dfDeficit[dfDeficit['Fiscal Year']!='TQ']
 dfDeficit['Fiscal Year'] = dfDeficit['Fiscal Year'].astype(int)
 dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Total'] * 1_000_000
-
+# manual dfDeficit comment out when a new download is needed -Finsih comment 
 
 st.markdown(
     """
@@ -51,6 +51,12 @@ st.markdown(
     """, 
     unsafe_allow_html=True
 )
+
+
+st.sidebar.title("Updated Configurations")
+st.sidebar.write("Wad Up!")
+
+
 
 # User Selection Opitions
 viewType = st.selectbox('President/Year Selection:', ['President','Year'])
