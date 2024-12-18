@@ -94,7 +94,7 @@ if viewType == "President":
 
     # # shows president info
     st.markdown(
-    f"<h3 style='text-align: center;'>{president} was in office from {startYear} to {endYear}.</h3>", 
+    f"<h2 style='text-align: center;'>{president} was in office from {startYear} to {endYear}.</h2>", 
     unsafe_allow_html=True
 )
 
