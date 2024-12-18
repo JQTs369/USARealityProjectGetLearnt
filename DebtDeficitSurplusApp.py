@@ -340,7 +340,11 @@ elif viewType == 'Year':
         ]
     }
     summaryDf = pd.DataFrame(summaryData)
+    # st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+        # Display the table with alternating row colors - Centered
+    st.markdown("<div style='display: flex; justify-content: center;'>", unsafe_allow_html=True)
     st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Graphs
     fig = go.Figure()
