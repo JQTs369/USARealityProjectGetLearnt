@@ -96,7 +96,10 @@ if viewType == "President":
     st.write(f'{president} was in office from {startYear} to {endYear}')
 
     # show debt vs deficit
-    st.write("Debt and Deficit/Surplus furing thier turn")
+    st.markdown(
+    "<h2 style='text-align: center;'>Debt and Deficit/Surplus during thier turn.</h2>", 
+    unsafe_allow_html=True
+)
     # Create a summary string
 
     # Data Setup for easy ploting
@@ -171,8 +174,10 @@ if viewType == "President":
         
         return ''.join(rows)
 
-    # Display the table with alternating row colors
+    # Display the table with alternating row colors - Centered
+    st.markdown("<div style='display: flex; justify-content: center;'>", unsafe_allow_html=True)
     st.markdown(color_alternating_rows(summaryDf), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Graphs
     # create our figure
