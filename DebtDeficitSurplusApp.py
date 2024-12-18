@@ -66,7 +66,7 @@ if viewType == "President":
 
     # let use select president
     # president = st.selectbox("Select President", dfPresidents['name'])
-    president = st.sidebar.subheader("Select President",dfPresidents['name'])
+    president = st.sidebar.selectbox("Select President",dfPresidents['name'])
     
 
     # get president data
