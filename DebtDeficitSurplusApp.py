@@ -47,7 +47,7 @@ dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Tota
 st.markdown(
     """
     <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
-    <h2 style='text-align: center;'>by POTUS or Year</h2>
+    <h2 style='text-align: center;'>by President or Year</h2>
     """, 
     unsafe_allow_html=True
 )
@@ -59,12 +59,15 @@ st.sidebar.write("Wad Up!")
 
 
 # User Selection Opitions
-viewType = st.selectbox('President/Year Selection:', ['President','Year'])
+# viewType = st.selectbox('President/Year Selection:', ['President','Year'])
+viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
 
 if viewType == "President":
 
     # let use select president
-    president = st.selectbox("Select President", dfPresidents['name'])
+    # president = st.selectbox("Select President", dfPresidents['name'])
+    president = st.sidebar.subheader("Select President",dfPresidents['name'])
+    
 
     # get president data
     presidentData = dfPresidents[dfPresidents['name'] == president].iloc[0]
@@ -236,7 +239,8 @@ elif viewType == 'Year':
     # Add a range slider for the user to pick a range of years
     min_year = int(dfDebt['record_fiscal_year'].min())
     max_year = int(dfDebt['record_fiscal_year'].max())
-    selected_years = st.slider("Select Year Range", min_year, max_year, (min_year, max_year))
+    # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
+    selected_years = st.sidebar.subheader("Select Year Range",min_year, max_year, (1993, 2001))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
