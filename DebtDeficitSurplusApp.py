@@ -92,8 +92,11 @@ if viewType == "President":
                         suffixes=('_debt','_deficit'))
     mergerdf['record_fiscal_year'] = mergerdf['record_fiscal_year'].astype(str)
 
-    # # shows rpresident info
-    st.write(f'{president} was in office from {startYear} to {endYear}')
+    # # shows president info
+    st.markdown(
+    "<h1 style='text-align: center;'>{president} was in office from {startYear} to {endYear}.</h1>", 
+    unsafe_allow_html=True
+)
 
     # show debt vs deficit
     st.markdown(
