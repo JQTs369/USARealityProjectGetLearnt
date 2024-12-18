@@ -397,8 +397,9 @@ elif viewType == 'Year':
 
     fig.update_layout(
         title=f"Debt and Deficit/Surplus from {selected_years[0]} to {selected_years[1]}",
-        title_x= 0.5,
-        title_xanchor='center',
+        title_x=0.5,  # Center the title horizontally
+        title_xanchor='center',  # Ensure the title is anchored at the center
+        title_font=dict(size=24, color="white"),
         xaxis_title='Year',
         yaxis=dict(
             title='Debt ($)',
