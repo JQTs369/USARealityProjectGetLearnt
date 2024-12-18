@@ -47,12 +47,19 @@ dfDeficit['Surplus or Deficit(-) Total'] = dfDeficit['Surplus or Deficit(-) Tota
 
 
 
-st.title("Welcome To JQTs369 First App!")
-# Center text using st.markdown with HTML
+# Create a custom container with a different background color
 st.markdown(
-    "<h2 style='text-align: center;'>History of America's Debt & Surplus/Deficits.</h2>", 
+    """
+    <div style="background-color:#f2f2f2; padding: 20px; border-radius: 10px; text-align: center;">
+        <h1 style="color: #1f77b4;">Welcome To JQTs369 First App!</h1>
+        <h2 style="color: #ff6347;">History of America's Debt & Surplus/Deficits.</h2>
+    </div>
+    """, 
     unsafe_allow_html=True
 )
+
+# Add vertical space after the container
+st.markdown("<br>", unsafe_allow_html=True)
 
 # Add some vertical space before the next section
 st.markdown("<br>", unsafe_allow_html=True)
