@@ -62,7 +62,7 @@ viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
 st.markdown(
     f"""
     <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
-    <h2 style='text-align: center;'>{viewType}</h2>
+    <h2 style='text-align: center;'>You Selected {viewType}</h2>
     """, 
     unsafe_allow_html=True
 )
