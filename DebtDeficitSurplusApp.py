@@ -61,8 +61,7 @@ viewType = st.sidebar.radio('President/Year Selection:', ['President','Year'])
 
 st.markdown(
     f"""
-    <h1 style='text-align: center; color: white;'>Debt & Surplus/Deficit</h1>
-    <h2 style='text-align: center;'>You Selected {viewType}</h2>
+    <h1 style='text-align: center;'>You Selected {viewType}</h1>
     """, 
     unsafe_allow_html=True
 )
@@ -100,7 +99,7 @@ if viewType == "President":
 
     # show debt vs deficit
     st.markdown(
-    "<h2 style='text-align: center;'>Debt and Deficit/Surplus during thier turn.</h2>", 
+    "<h3 style='text-align: center;'>Debt and Deficit/Surplus during their turn.</h3>", 
     unsafe_allow_html=True
 )
     # Create a summary string
