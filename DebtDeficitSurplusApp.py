@@ -108,7 +108,7 @@ if viewType == "President":
 
     # show debt vs deficit
     st.markdown(
-    "<h3 style='text-align: center;'>Debt and Deficit/Surplus during their turn.</h3>", 
+    "<h4 style='text-align: left;'>Debt and Deficit/Surplus during their turn.</h4>", 
     unsafe_allow_html=True
 )
     # Create a summary string
