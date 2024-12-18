@@ -54,7 +54,7 @@ st.markdown(
 
 
 st.sidebar.title("Welcome To JQTs369 First App!")
-st.sidebar.write("History of Amaerica's Debt & Surplus/Deficits.)
+st.sidebar.write("History of Amaerica's Debt & Surplus/Deficits.")
 
 
 # User Selection Opitions
