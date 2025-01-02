@@ -266,7 +266,7 @@ elif viewType == 'Year':
     max_year = int(dfDebt['record_fiscal_year'].max())
     # selected_years = st.slider("Select Year Range", min_year, max_year, (1993, 2001))
     st.sidebar.subheader("Year Range Selector")
-    selected_years = st.sidebar.slider("",min_year, max_year, (1993, 2002))
+    selected_years = st.sidebar.slider("",min_year, max_year, (1982, 2023))
 
     # Filter the data for the selected year range
     debtData = dfDebt[(dfDebt['record_fiscal_year'] >= selected_years[0]) & (dfDebt['record_fiscal_year'] <= selected_years[1])]
