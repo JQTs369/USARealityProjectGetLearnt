@@ -25,7 +25,7 @@ dfDebt = dfInstance.getHistoricalDebtAPIData(BaseUrl)
 dfPresidents = pd.read_json('AmericanRealityClasses/resources/USAPresidents.json')
 
 # this will dL the info on every click
-dfDeficit = dfInstance.getTaxPolicyDownload() 
+# dfDeficit = dfInstance.getTaxPolicyDownload() 
 
 # manual dfDeficit comment out when a new download is needed -Start #TODO: put a yearly time into this method!
 path = 'AmericanRealityClasses/resources/TaxPolicyCentrHistoricRevenues.xlsx'
