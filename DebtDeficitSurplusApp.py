@@ -240,12 +240,12 @@ if viewType == "President":
         xaxis_title='Year',
         yaxis=dict(
             title='Debt ($)',
-            titlefont=dict(color='yellow'),
+            # titlefont=dict(color='yellow'),
             tickfont=dict(color='yellow')
         ),
         yaxis2=dict(
             title='Deficit/Surplus ($)',
-            titlefont=dict(color='red'),
+            # titlefont=dict(color='red'),
             tickfont=dict(color='red'),
             overlaying='y',
             side='right'
@@ -403,12 +403,12 @@ elif viewType == 'Year':
         xaxis_title='Year',
         yaxis=dict(
             title='Debt ($)',
-            titlefont=dict(color='yellow'),
+            # titlefont=dict(color='yellow'),
             tickfont=dict(color='yellow')
         ),
         yaxis2=dict(
             title='Deficit/Surplus ($)',
-            titlefont=dict(color='red'),
+            # titlefont=dict(color='red'),
             tickfont=dict(color='red'),
             overlaying='y',
             side='right'
